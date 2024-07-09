@@ -1,0 +1,22 @@
+.container {
+  padding: 20px;
+}
+
+.selectors-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+  flex-wrap: nowrap; /* 確保內容不換行 */
+}
+
+.option-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.generate-button {
+  display: block;
+  margin: 16px auto 0 auto;
+}
