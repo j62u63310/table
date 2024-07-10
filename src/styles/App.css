@@ -1,5 +1,7 @@
+/* App.css */
 .container {
   padding: 20px;
+  font-family: Arial, sans-serif;
 }
 
 .selectors-row {
@@ -7,7 +9,15 @@
   justify-content: space-between;
   align-items: flex-start;
   gap: 10px;
-  flex-wrap: nowrap; /* 確保內容不換行 */
+  flex-wrap: nowrap;
+}
+
+.buttons-row {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 16px;
+  margin-bottom: 20px; /* 添加這一行確保按鈕與表格之間有20px的距離 */
 }
 
 .option-item {
@@ -16,7 +26,69 @@
   align-items: flex-start;
 }
 
-.generate-button {
-  display: block;
-  margin: 16px auto 0 auto;
+.generate-button,
+.export-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #1890ff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.generate-button:disabled,
+.export-button:disabled {
+  background-color: #d9d9d9;
+  cursor: not-allowed;
+}
+
+.table-cell {
+  border: 1px solid #ddd; /* 使表格中的線條明顯一點 */
+  padding: 8px;
+  min-width: 100px; /* 設定單元格最小寬度 */
+  white-space: nowrap; /* 防止換行 */
+  text-overflow: ellipsis; /* 當內容過多時，顯示省略號 */
+  overflow: hidden;
+}
+
+.table-header {
+  background-color: #f0f0f0; /* 縱軸第一欄同色 */
+}
+
+.table-header-y {
+  background-color: #f0f0f0;
+  font-weight: bold;
+}
+
+.ant-table-thead > tr > th {
+  background: #fafafa;
+  font-weight: bold;
+}
+
+.ant-table-tbody > tr > td {
+  border-bottom: 1px solid #f0f0f0;
+}
+
+/* 奇偶行交替顏色 */
+.ant-table-tbody > tr:nth-child(odd) > td {
+  background-color: #fafafa;
+}
+
+.ant-table-tbody > tr:nth-child(even) > td {
+  background-color: #ffffff;
+}
+
+/* 縱軸第一欄固定顏色 */
+.ant-table-tbody > tr > td:first-child {
+  background-color: #f0f0f0;
+  font-weight: bold;
+}
+
+/* 表格滾動條樣式 */
+.ant-table-wrapper {
+  overflow-x: auto; /* 啟用橫向滾動條 */
+  max-width: 100%; /* 確保表格不會超出容器寬度 */
 }

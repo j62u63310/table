@@ -30,9 +30,9 @@ export function generateCrossTable(records, xKey, yKey, totalKey) {
   const crossTable = {};
   
   records.forEach(record => {
-    const xValue = record[xKey].value;
-    const yValue = record[yKey].value;
-    const totalValue = parseFloat(record[totalKey].value);
+    const xValue = record[xKey]?.value || '未知';
+    const yValue = record[yKey]?.value || '未知';
+    const totalValue = parseFloat(record[totalKey]?.value || 0);
 
     if (!crossTable[xValue]) {
       crossTable[xValue] = {};
